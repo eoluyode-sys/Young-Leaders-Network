@@ -1,0 +1,172 @@
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.container {
+  max-width: 1100px;
+}
+
+:focus {
+  outline: 2px solid rgba(99,102,241,0.6);
+  outline-offset: 2px;
+}
+
+/* Smooth hero image fade-in */
+.hero-photo {
+  opacity: 0;
+  animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover zoom for social icons */
+.social-icon:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Boxed section heading like screenshot */
+.boxed-title {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border: 2px solid #111827; /* dark border */
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  font-size: 0.875rem;
+  background: transparent;
+}
+
+/* thin centered separator */
+.separator {
+  height: 1px;
+  width: 140px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.06), transparent);
+  margin: 0.5rem auto;
+}
+
+/* feature block */
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: inline-grid;
+  place-items: center;
+  background: rgba(79,70,229,0.08);
+  color: #4f46e5;
+  font-size: 1.1rem;
+}
+
+/* Skills grid */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 1.25rem;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Each skill item */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  padding: 0.75rem;
+  border-radius: 8px;
+  width: 96px;
+  height: 96px;
+  box-shadow: 0 8px 20px rgba(15,23,42,0.06);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  color: #111827;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Icon inside skill item */
+.skill-item i, .skill-item span {
+  font-size: 1.35rem;
+}
+
+/* hover effect */
+.skill-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(15,23,42,0.08);
+}
+
+/* Stat cards */
+.stat-card { min-height: 140px; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; }
+.stat-number { line-height:1; }
+
+/* Capabilities / skill badges */
+.cap-card { transition: transform 180ms ease, box-shadow 180ms ease; }
+.cap-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(15,23,42,0.08); }
+
+.badge {
+  display:inline-block;
+  background:#f8fafc;
+  padding:0.35rem 0.6rem;
+  border-radius:9999px;
+  font-size:0.8rem;
+  color:#111827;
+  border:1px solid rgba(17,24,39,0.04);
+}
+
+/* Small layout tweak */
+@media (max-width: 768px) {
+  .skill-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .skill-item { width: 120px; height: 88px; }
+  .stat-card { align-items:center; text-align:center; }
+}
+
+/* Focus outline */
+:focus { outline: 2px solid rgba(99,102,241,0.45); outline-offset: 2px; }
+
+/* Section divider (gradient pill) */
+.section-divider {
+  height: 6px;
+  width: 140px;
+  margin: 1.5rem auto;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #6366f1, #a78bfa);
+}
+
+/* Hero photo fade-in */
+.hero-photo { opacity: 0; animation: fadeIn 1s ease-in-out forwards; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Social icon hover */
+.social-icon { color: inherit; transition: transform 0.18s ease, color 0.18s ease; }
+.social-icon:hover { transform: translateY(-3px) scale(1.08); color: #4f46e5; }
+
+/* Stat card style */
+.stat-card .stat-number { font-variant-numeric: tabular-nums; }
+
+/* Badge */
+.badge { padding: 0.25rem 0.5rem; background: #f3f4f6; border-radius: 9999px; font-size: 0.75rem; color: #374151; }
+
+/* Small responsive tweaks */
+@media (max-width: 768px) {
+  .container { padding-left: 1rem; padding-right: 1rem; }
+  header .backdrop-blur-md { padding-left: 0.75rem; padding-right: 0.75rem; }
+}
+
+/*PRELOADER ANIMATION
+   ========================= */
+#preloader {
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader .animate-spin {
+  border-radius: 9999px;
+  border-top-color: transparent;
+}
